@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  # password: derp
+  # username: derp
+  # host: <%= ENV['DATABASE_HOST'] %>
+
+development:
+  <<: *default
+  database: medline_plus_connect_demo_dev
+
+test:
+  <<: *default
+  database: medline_plus_connect_demo_test
