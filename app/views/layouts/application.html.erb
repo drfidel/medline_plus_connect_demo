@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MedlinePlusConnectDemo</title>
+    <title><%= content_for?(:title) ? content_for(:title) : DEFAULT_TITLE %></title>
+    <meta name="description" content="Demonstration of the medlineplusconnect-ruby gem, ">
+    <meta name="keywords" content="Ruby,Rails,API,rubygem,gem,programming,software,open source,demo,NLM,medlineplus">
+    <meta name="author" content="Todd Morningstar">
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <%= yield %>
   </body>
