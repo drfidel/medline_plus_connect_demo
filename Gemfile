@@ -3,6 +3,7 @@ ruby '2.3.1'
 
 gem 'rails', '~> 5.0'
 
+gem 'aldous' # Build DRY service objects.  
 gem 'bcrypt', '~> 3.1.7' # Use ActiveModel has_secure_password
 # gem 'capistrano-rails', group: :development # Use Capistrano for deployment
 gem 'jbuilder', '~> 2.5' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
