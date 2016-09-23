@@ -1,0 +1,1 @@
+class DiagnosisCodeServiceError < StandardError; end;
