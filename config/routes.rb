@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'home/index'
+  get 'home/about', as: :about
 
   # Diagnosis Code Lookups
   get  'codes', controller: :codes, action: :index, as: :codes

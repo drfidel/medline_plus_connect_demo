@@ -10,6 +10,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <%= yield %>
+    <div id="page-container">
+      <%= render 'header' %>
+      <%= yield %>
+    </div>
+    <%= render 'footer' %>
+    <div id="after-footer-container">
+      <%= render 'analytics/google' if Rails.env.production? %>
+    </div>
   </body>
 </html>
