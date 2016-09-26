@@ -5,12 +5,16 @@ gem 'rails', '~> 5.0'
 
 gem 'aldous' # Build DRY service objects.  
 gem 'bcrypt', '~> 3.1.7' # Use ActiveModel has_secure_password
+gem 'bootstrap', '~> 4.0.0.alpha4'
 # gem 'capistrano-rails', group: :development # Use Capistrano for deployment
 gem 'jbuilder', '~> 2.5' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jquery-rails'
 gem 'pg' # PostgreSQL
 gem 'puma', '~> 3.0'
 # gem 'redis', '~> 3.0' # Use Redis adapter to run Action Cable in production
+source 'https://rails-assets.org' do # 'tether' required for bootstrap tooltips (or non-custom bootstrap import)
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
 gem 'sass-rails', '~> 5.0'
 gem 'therubyracer' # needed as a JS runtime
 gem 'turbolinks', '~> 5'
