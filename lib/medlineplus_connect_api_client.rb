@@ -8,7 +8,7 @@ class MedlinePlusConnectApiClient
   RESPONSE_JSON = 'application/json'.freeze
   RESPONSE_XML  = 'text/xml'.freeze
   # Cache prefixes.
-  CODE_CACHE_PREFIX = 'MedlinePlusConnect-diagnosis_code-'.freeze
+  CODE_CACHE_PREFIX = 'medplscnct-code-'.freeze
 
   @@api_url = 'https://apps.nlm.nih.gov/medlineplus/services/mpconnect_service.cfm'
 
