@@ -1,13 +1,24 @@
 <h1>Diagnosis Code Descriptions</h1>
 <div>
   <p>
-    Need to look up a description associated with an ICD-9 or ICD-10 medical diagnosis code? Input the code below!
+    Need to look up a description associated with an ICD-10 medical diagnosis code? Input the code below!
+  </p>
+  <p>
+    ICD-9 <em>coming soon!</em>
   </p>
 </div>
 <div>
   <%= form_tag codes_submit_code_path, remote: true do %>
     <%= label_tag 'diagnosis-code', 'Enter Code:' %>
-    <%= text_field_tag 'diagnosis-code', nil, id: 'diagnosis-code', maxlength: 7, placeholder: 'ICD-10 Code' %>
+    <%= text_field_tag 'diagnosis_code', nil, id: 'diagnosis-code', maxlength: 7, placeholder: 'ICD-10 Code' %>
+    <%= submit_tag 'Fetch Code' %>
   <% end %>
 </div>
-<div id="code-description-results"></div>
+<div id="code-description-results">
+  <div class="cont__code-id-title hide">
+    <strong>Code:&nbsp;</strong><span class="cont__code-id"></span>
+  </div>
+  <div class="cont__description-header hide">
+    <strong>Diagnosis Description(s):&nbsp;</strong><span class="cont__code-description-text"></span>
+  </div>
+</div>

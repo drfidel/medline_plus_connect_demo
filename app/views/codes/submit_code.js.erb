@@ -1,0 +1,4 @@
+$('.cont__code-id-title').show();
+$('.cont__code-id').html("<%= @code_description.code %>");
+$('.cont__description-header').show();
+$('.cont__code-description-text').hide().html("<%= @code_description.description.to_s %>").fadeIn('slow');
