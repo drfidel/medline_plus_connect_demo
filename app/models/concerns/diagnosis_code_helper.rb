@@ -2,6 +2,10 @@
 module DiagnosisCodeHelper
   extend ActiveSupport::Concern
 
+  def fetch_code_description!
+    self.description = code_description(code) if (respond_to?(:description) && respond_to?(:code))
+  end
+
   # Get a description associated with a medical diagnosis code.
   # @param diagnosis_code String 'ICD-10' code
   # @exception DiagnosisCodeServiceError
@@ -14,6 +18,6 @@ module DiagnosisCodeHelper
         'Error(s) with diagnosis code description service: ' << result.errors.join(', ').to_s
     end
     
-    result.descriptor
+    result.descriptions
   end
 end

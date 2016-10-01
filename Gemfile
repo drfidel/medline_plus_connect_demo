@@ -15,6 +15,7 @@ gem 'puma', '~> 3.0'
 source 'https://rails-assets.org' do # 'tether' required for bootstrap tooltips (or non-custom bootstrap import)
   gem 'rails-assets-tether', '>= 1.1.0'
 end
+gem 'rest-client'
 gem 'sass-rails', '~> 5.0'
 gem 'therubyracer' # needed as a JS runtime
 gem 'turbolinks', '~> 5'

@@ -1,6 +1,8 @@
-class MedlinePlusConnectApiError < StandardError; end;
+require 'rest-client'
 
-class MedlinePlusConnectApiClient
+class MedlineplusConnectApiError < StandardError; end;
+
+class MedlineplusConnectApiClient
   # Medical coding system identifiers.
   SYSTEM_ICD10 = '2.16.840.1.113883.6.90'.freeze
   SYSTEM_ICD9  = '2.16.840.1.113883.6.103'.freeze
@@ -13,8 +15,8 @@ class MedlinePlusConnectApiClient
   @@api_url = 'https://apps.nlm.nih.gov/medlineplus/services/mpconnect_service.cfm'
 
   def initialize(options = {})
-    @system         = options[:system] || MedlinePlusConnectApi::SYSTEM_ICD10
-    @response_type  = options[:response_type] || MedlinePlusConnectApi::RESPONSE_JSON
+    @system         = options[:system] || SYSTEM_ICD10
+    @response_type  = options[:response_type] || RESPONSE_JSON
     @diagnosis_code = options[:diagnosis_code] || ''
     @no_caching     = options[:no_caching] || false
   end
