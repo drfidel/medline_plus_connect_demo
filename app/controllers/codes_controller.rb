@@ -1,7 +1,5 @@
 class CodesController < ApplicationController
 
-  rescue_from DiagnosisCodeServiceError, with: :display_service_error
-
   def index
   end
 
@@ -17,12 +15,4 @@ class CodesController < ApplicationController
       format.js
     end
   end
-
-  protected
-
-    def display_service_error(exception)
-      # TODO: render JS template that displays service error message.
-      flash[:error] = exception.message
-      redirect_back fallback_location: codes_path
-    end
 end
