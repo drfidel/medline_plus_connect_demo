@@ -23,11 +23,13 @@ class DiagnosisCodeDescriptionService < Aldous::Service
   #  Object.
   def perform
     client          = MedlineplusConnectApiClient.new diagnosis_code: @diagnosis_code
-    client_response = JSON.parse client.get_code_description
+    client_response = JSON.parse client.get_code_description, symbolize_names: true
 
     if client_response
-      if client_response['feed'].present? && client_response['feed']['entry'].present?
-        Result::Success.new descriptions: client_response['feed']['entry'], message: MESSAGE_SUCCESS
+      if client_response[:feed].present? && client_response[:feed][:entry].present?
+        Result::Success.new descriptions: client_response[:feed][:entry], message: MESSAGE_SUCCESS
+      else
+        Result::Success.new
       end
     else
       Result::Failure.new errors: ERROR_NO_RESPONSE
