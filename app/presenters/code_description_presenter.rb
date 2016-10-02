@@ -10,6 +10,9 @@ class CodeDescriptionPresenter
     @code_description.code
   end
 
+  # Returns an array of hashes containing description entries, a relevant
+  #  title, and NLM-provided link. Returns array with a default hash with
+  #  error message if no description entries found.
   def descriptions
     @description_hash ||= [].tap do |ary|
       @code_description.description_data.each do |description|
