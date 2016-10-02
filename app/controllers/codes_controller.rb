@@ -9,7 +9,7 @@ class CodesController < ApplicationController
 
   def submit_code
     @code_description = CodeDescription.new code: params[:diagnosis_code]
-    @code_description.fetch_code_description!
+    @code_description.fetch_code_description_data!
 
     respond_to do |format|
       format.js

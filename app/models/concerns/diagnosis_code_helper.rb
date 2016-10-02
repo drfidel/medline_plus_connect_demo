@@ -2,8 +2,8 @@
 module DiagnosisCodeHelper
   extend ActiveSupport::Concern
 
-  def fetch_code_description!
-    self.description = code_description(code) if (respond_to?(:description) && respond_to?(:code))
+  def fetch_code_description_data!
+    self.description_data = code_description(code) if (respond_to?(:description_data) && respond_to?(:code))
   end
 
   # Get a description associated with a medical diagnosis code.
