@@ -11,6 +11,8 @@ class CodesController < ApplicationController
     @code_description = CodeDescription.new code: params[:diagnosis_code]
     @code_description.fetch_code_description_data!
 
+    @code_description_presenter = CodeDescriptionPresenter.new @code_description
+
     respond_to do |format|
       format.js
     end

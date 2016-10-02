@@ -1,4 +1,4 @@
-# TODO DOCUMENT
+# Handles retrieval of medical descriptions associated with a diagnosis code.
 class CodeDescription
   include ActiveModel::Model
   include DiagnosisCodeHelper

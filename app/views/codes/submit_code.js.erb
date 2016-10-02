@@ -1,4 +1,6 @@
 $('.cont__code-id-title').show();
-$('.cont__code-id').html("<%= @code_description.code %>");
+$('.cont__code-id').html("<%= @code_description_presenter.code %>");
 $('.cont__description-header').show();
-$('.cont__code-description-text').hide().html("<%= @code_description.description_data.to_s %>").fadeIn('slow');
+// TODO: Create partial template in which to render each `:description`
+//  hash in the `descriptions` array.
+$('.cont__code-description-text').hide().html("<%= @code_description_presenter.descriptions.inspect %>").fadeIn('slow');
