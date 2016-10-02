@@ -4,7 +4,6 @@ class CodesController < ApplicationController
   end
 
   def description
-    @code_description = CodeDescription.new
   end
 
   def submit_code
