@@ -17,7 +17,7 @@ module MedlinePlusConnectDemo
     )
 
     config.eager_load_paths += %W(
-      #{config.root}/app/errors/ #{config.root}/app/services #{config.root}/lib/
+      #{config.root}/app/errors/ #{config.root}/app/services/ #{config.root}/lib/
     )
   end
 end
