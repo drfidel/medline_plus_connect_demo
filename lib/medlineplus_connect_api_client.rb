@@ -12,7 +12,8 @@ class MedlineplusConnectApiClient
   # Cache prefixes.
   CODE_CACHE_PREFIX = 'medplscnct-code-'.freeze
 
-  @@api_url = 'https://apps.nlm.nih.gov/medlineplus/services/mpconnect_service.cfm'
+  # Base location from which to make API requests.
+  API_URI = 'https://apps.nlm.nih.gov/medlineplus/services/mpconnect_service.cfm'.freeze
 
   def initialize(options = {})
     @system         = options[:system] || SYSTEM_ICD10
@@ -23,7 +24,7 @@ class MedlineplusConnectApiClient
 
   def get_code_description
     response = Rails.cache.fetch code_cache_key(@diagnosis_code), expires_in: 12.hours, force: @no_caching do
-      RestClient.get @@api_url, {
+      RestClient.get API_URI, {
         params: {
           'mainSearchCriteria.v.cs' => @system,
           'mainSearchCriteria.v.c'  => @diagnosis_code,
