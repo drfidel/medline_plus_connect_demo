@@ -16,10 +16,10 @@ class DiagnosisCodeDescriptionService < Aldous::Service
   # Default value to return if no data is provided to the `Result` Data
   #  Transfer Object, or if an exception is raised during the `#perform` call.
   def default_result_data
-    { descriptions: @diagnosis_code, message: MESSAGE_INVALID }
+    { descriptions: [], message: MESSAGE_INVALID }
   end
 
-  # Makes ICD-10 API call, and returns result payload in `Result` Data Transfer
+  # Makes ICD-10 API call, and returns result payload in `result` Data Transfer
   #  Object.
   def perform
     client          = MedlineplusConnectApiClient.new diagnosis_code: @diagnosis_code
