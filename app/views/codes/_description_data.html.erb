@@ -1,0 +1,10 @@
+<div class="cont_code-description">
+  <div>
+    <em>Title:&nbsp;</em>
+    <strong>
+      <%= description[:title] %>&nbsp;
+      (<%= link_to 'NLM Info Page', description[:link], target: '_blank', rel: 'external' %>)
+    </strong>
+  </div>
+  <div><em>Description:&nbsp;</em><%= description[:description].html_safe %></div>
+</div>
