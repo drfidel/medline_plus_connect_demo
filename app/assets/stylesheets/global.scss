@@ -1,5 +1,13 @@
-/* Bootstrap 4 dropped support for the .hidden class */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 2px solid #666666;
+  margin: 1em 0;
+  padding: 0;
+}
 
+/* Bootstrap 4 dropped support for the .hidden class */
 .hide {
   display: none;
 }

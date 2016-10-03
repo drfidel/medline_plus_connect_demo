@@ -2,5 +2,6 @@ $('.cont__code-id-title').show();
 $('.cont__code-id').html("<%= @code_description_presenter.code %>");
 $('.cont__description-header').show();
 $('.cont__code-description-result').hide().html(
-  "<%=  escape_javascript render(partial: 'description_data', collection: @code_description_presenter.descriptions, as: :description) %>"
+  "<%= escape_javascript render(partial: 'description_data', collection: @code_description_presenter.descriptions,
+    as: :description, spacer_template: 'hr_spacer') %>"
 ).fadeIn('slow');
