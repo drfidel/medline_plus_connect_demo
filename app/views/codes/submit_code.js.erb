@@ -5,3 +5,4 @@ $('.cont__code-description-result').hide().html(
   "<%= escape_javascript render(partial: 'description_data', collection: @code_description_presenter.descriptions,
     as: :description, spacer_template: 'hr_spacer') %>"
 ).fadeIn('slow');
+DiagnosisCodeDemo.Code.openNLMLinksInNewTabs();
