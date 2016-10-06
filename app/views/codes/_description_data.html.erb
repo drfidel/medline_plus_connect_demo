@@ -1,12 +1,12 @@
 <div class="cont__code-description">
   <div>
-    <em>Title:&nbsp;</em>
-    <strong>
-      <%= description[:title] %>
-      <% if description[:link].present? %>
-        &nbsp;&#124;&nbsp;<%= link_to 'NLM Info Page', description[:link], target: '_blank', rel: 'external' %>
-      <% end %>
-    </strong>
+    <% if description[:link].present? %>
+      <em>Title:&nbsp;</em>
+      <strong>
+        <%= description[:title] %>&nbsp;&#124;&nbsp;<%=
+          link_to 'NLM Info Page', description[:link], target: '_blank', rel: 'external' %>
+      </strong>
+    <% end %>
   </div>
   <div class="cont__nlm-description"><em>Description:&nbsp;</em><%= description[:description].html_safe %></div>
 </div>
