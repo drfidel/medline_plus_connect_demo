@@ -18,7 +18,6 @@ end
 gem 'rest-client'
 gem 'sass-rails', '~> 5.0'
 gem 'therubyracer' # needed as a JS runtime
-gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 
 group :development, :test do
