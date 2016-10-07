@@ -1,27 +1,37 @@
-<h1>Diagnosis Code Descriptions</h1>
-<div>
-  <p>
-    Need to look up a description associated with an ICD-10 medical diagnosis code? Input the code below!
-  </p>
-  <p>
-    ICD-9 <em>coming soon!</em>
-  </p>
-</div>
-<div>
-  <%= form_tag codes_submit_code_path, remote: true do %>
-    <%= label_tag 'diagnosis-code', 'Enter Code:' %>
-    <%= text_field_tag 'diagnosis_code', nil, id: 'diagnosis-code', maxlength: 7, placeholder: 'ICD-10 Code' %>
-    <%= submit_tag 'Fetch Code' %>
-  <% end %>
-</div>
-<div id="code-description-results">
-  <div class="cont__code-id-title">
-    <h3>Code:&nbsp;</h3><span class="cont__code-id"></span>
+<section>
+  <div class="container m-b-2">
+    <h2>Diagnosis Code Descriptions</h2>
+    <p class="lead">
+      Need to look up a description associated with an ICD-10 medical diagnosis code? Input the code below!
+      <br />
+      <small class="text-muted">ICD-9 <em>coming soon!</em></small>
+    </p>
   </div>
-  <div class="cont__description-header">
-    <div>
-      <h3>Diagnosis Description(s):</h3>
-    <div>
-    <div class="cont__code-description-result"></div>
+</section>
+<section>
+  <div class="container m-b-3">
+    <%= form_tag codes_submit_code_path, remote: true, class: 'form-inline' do %>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">Enter Code</div>
+          <%= text_field_tag 'diagnosis_code', nil, id: 'diagnosis-code', maxlength: 7, placeholder: 'ICD-10 Code',
+            class: 'form-control' %>
+        </div>
+      </div>
+      <%= submit_tag 'Fetch Code', class: 'btn btn-primary' %>
+    <% end %>
   </div>
-</div>
+  <div class="container">
+    <div id="code-description-results">
+      <div class="cont__code-id-title">
+        <h3>Code:&nbsp;</h3><span class="cont__code-id"></span>
+      </div>
+      <div class="cont__description-header">
+        <div>
+          <h3>Diagnosis Description(s):</h3>
+        <div>
+        <div class="cont__code-description-result"></div>
+      </div>
+    </div>
+  </div>
+</section>
