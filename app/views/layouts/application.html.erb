@@ -15,7 +15,9 @@
   <body>
     <div id="page-container">
       <%= render 'header' %>
-      <%= yield %>
+      <div id='content-container' class="p-l-2">
+        <%= yield %>
+      </div>
     </div>
     <%= render 'footer' %>
     <div id="after-footer-container">
