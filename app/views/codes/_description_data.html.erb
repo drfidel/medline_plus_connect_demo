@@ -1,12 +1,16 @@
-<div class="cont__code-description">
-  <div>
-    <% if description[:link].present? %>
-      <em>Title:&nbsp;</em>
-      <strong>
-        <%= description[:title] %>&nbsp;&#124;&nbsp;<%=
-          link_to 'NLM Info Page', description[:link], target: '_blank', rel: 'external' %>
-      </strong>
-    <% end %>
+<div class="card-group">
+  <div class="card <%= 'card-inverse card-inverse-borders' if description_counter.even? %>">
+    <div class="card-block">
+      <% if description[:link].present? %>
+        <p class="card-title lead">
+          <strong><%= description[:title] %></strong>&nbsp;&#124;&nbsp;
+          <%= link_to 'NLM Info Page', description[:link], target: '_blank', rel: 'external',
+            class: 'btn btn-info' %>
+        </p>
+      <% end %>
+      <span class="card-text cont__nlm-description">
+        <%= description[:description].html_safe %>
+      </span>
+    </div>
   </div>
-  <div class="cont__nlm-description"><em>Description:&nbsp;</em><%= description[:description].html_safe %></div>
 </div>

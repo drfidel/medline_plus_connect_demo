@@ -1,6 +1,23 @@
+/** NAV **/
+
 /* Override navigation colors and maintain greyscale theme. */
 .nav-pills .nav-link.active, .nav-pills .nav-link.active:focus, .nav-pills .nav-link.active:hover,
 .nav-pills .nav-item.open .nav-link, .nav-pills .nav-item.open .nav-link:focus, .nav-pills .nav-item.open
 .nav-link:hover { 
   background-color: #1e1e1e;
+}
+
+/** CARDS **/
+
+/* Default card is too bright, make it darker. */
+.card {
+  background-color: #afafaf;
+  border-color: #555555;
+}
+
+/* Global style for inverted "card" borders */
+
+.card-inverse-borders {
+  background-color: #333333;
+  border-color: #777777;
 }
