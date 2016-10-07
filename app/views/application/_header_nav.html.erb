@@ -3,8 +3,15 @@
     <li class="nav-item <%= 'active' if request.path == '/' %>">
       <%= link_to content_tag(:i, nil, class: 'fa fa-home nav-link-home'), root_path, class: 'nav-link' %>
     </li>
-    <li class="nav-item <%= active_class codes_path %>">
-      <%= link_to 'Code Descriptions', codes_path, class: 'nav-link' %>
+    <li class="nav-item nav-item-dropdown <%= active_class codes_path %>">
+      <%= link_to 'Diagnosis Descriptions', '#', class: 'nav-link dropdown-toggle', role: 'button',
+        data: { toggle: 'dropdown' } %>
+      <div class="dropdown-menu">
+        <%= link_to 'Code Descriptions', codes_description_path, class: 'dropdown-item' %>
+        <%= link_to 'Code Search', '#', class: 'dropdown-item' %>
+        <div class="dropdown-divider"></div>
+        <%= link_to 'Diagnosis Codes', codes_path, class: 'dropdown-item' %>
+      </div>
     </li>
     <li class="nav-item <%= active_class about_path %>">
       <%= link_to 'About', about_path, class: 'nav-link' %>
