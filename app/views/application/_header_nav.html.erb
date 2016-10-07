@@ -1,5 +1,5 @@
 <nav  id="site-nav" class="navbar navbar-dark bg-inverse">
-  <ul class="nav navbar-nav">
+  <ul class="nav navbar-nav nav-pills">
     <li class="nav-item <%= 'active' if request.path == '/' %>">
       <%= link_to content_tag(:i, nil, class: 'fa fa-home nav-link-home'), root_path, class: 'nav-link' %>
     </li>
