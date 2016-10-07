@@ -2,9 +2,12 @@
 <html>
   <head>
     <title><%= content_for?(:title) ? content_for(:title) : DEFAULT_TITLE %></title>
-    <meta name="description" content="Demonstration of the medlineplusconnect-ruby gem, ">
-    <meta name="keywords" content="Ruby,Rails,API,rubygem,gem,programming,software,open source,demo,NLM,medlineplus">
+    <meta name="application-name" content="Todd Morningstar's MedlineplusConnect-API Rubygem Demo." />
+    <meta name="description" content="Demonstration of the medlineplusconnect-ruby gem.">
+    <meta name="keywords" content="Ruby,Rails,API,rubygem,gem,open source,NLM,medlineplus,medicine,diagnosis,ICD-10">
     <meta name="author" content="Todd Morningstar">
+    <meta name="generator" content="Ruby on Rails <%= Rails.version %>; Ruby <%= RUBY_VERSION %>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
