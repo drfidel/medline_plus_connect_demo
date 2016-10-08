@@ -1,5 +1,5 @@
 <section>
-  <div class="container m-b-2 p-l-2">
+  <div class="container m-b-2 p-x-2">
     <h2>Diagnosis Code Descriptions</h2>
     <p class="lead">
       Need to look up a description associated with an ICD-10 medical diagnosis code? Input the code below!
@@ -9,7 +9,7 @@
   </div>
 </section>
 <section>
-  <div class="container m-b-3">
+  <div class="container m-b-3 p-x-2">
     <%= form_tag codes_submit_code_path, remote: true, class: 'form-inline' do %>
       <div class="form-group">
         <div class="input-group">
@@ -21,7 +21,7 @@
       <%= submit_tag 'Fetch Code', class: 'btn btn-secondary' %>
     <% end %>
   </div>
-  <div class="container">
+  <div class="container p-x-2">
     <div id="code-description-results">
       <div class="card cont__code-id-title hide">
         <div class="card-header">
