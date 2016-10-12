@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe CodeDescription do
-
   it { is_a? ActiveModel::Model }
+  it_behaves_like 'a DiagnosisCodeHelper model'
 
   context 'attributes' do
     let(:cd)   { CodeDescription.new }
