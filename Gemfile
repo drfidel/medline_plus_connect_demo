@@ -37,6 +37,8 @@ group :development do
 end
 
 group :test do
+  gem 'capybara'
+  gem 'capybara-webkit'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers', require: false
   gem 'test-unit'
