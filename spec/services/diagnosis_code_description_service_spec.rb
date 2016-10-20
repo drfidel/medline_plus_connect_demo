@@ -21,7 +21,10 @@ describe DiagnosisCodeDescriptionService do
       stub_request(:get, api_url).
         with(query: hash_including({ 'mainSearchCriteria.v.c' => code })).
         to_return(status: 200, body:
-          '{"feed":{"entry":[{"title": {"_value": "Sinusitis"}, "link": [{"title": "Sinusitis", "href": "https://medlineplus.gov/sinusitis.html"}], "summary": {"_value": "Sinusitis means your sinuses are inflamed."}}]}}')
+          '{"feed":{"entry":[{
+            "title": {"_value": "Sinusitis"},
+            "link": [{"title": "Sinusitis", "href": "https://medlineplus.gov/sinusitis.html"}],
+            "summary": {"_value": "Sinusitis means your sinuses are inflamed."}}]}}')
 
       result = DiagnosisCodeDescriptionService.perform code
 
