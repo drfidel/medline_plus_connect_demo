@@ -27,6 +27,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'spring'  # Spring speeds up development by keeping running app in the background.
   gem 'spring-commands-rspec'
+  gem 'webmock'
 end
 
 group :development do
