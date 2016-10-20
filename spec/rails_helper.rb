@@ -7,7 +7,7 @@ require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'support/config_factory_girl'
-require 'webmock/rspec'
+require 'support/config_webmock'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -27,13 +27,6 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
-
-# Webmock allows stubbing of external http requests, and disables all other
-#  requests outside of localdev.
-# Use `WebMock.disable_net_connect! allow_localhost: true` within tests which
-#  make external requests (e.g., API calls), and reenable net connections with
-#  `WebMock.allow_net_connect!` when finished.
-WebMock.allow_net_connect!
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
