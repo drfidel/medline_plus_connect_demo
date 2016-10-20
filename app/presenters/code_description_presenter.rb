@@ -15,14 +15,16 @@ class CodeDescriptionPresenter
   #  error message if no description entries found.
   def descriptions
     @description_hash ||= [].tap do |ary|
-      @code_description.description_data.each do |description|
-        ary << {
-          title:       description[:title][:_value],
-          link:        description[:link].first[:href],
-          description: description[:summary][:_value]
-        }
-      end.empty? and begin
+      if @code_description.description_data.blank?
         ary << empty_data
+      else
+        @code_description.description_data.each do |description|
+          ary << {
+            title:       description[:title][:_value],
+            link:        description[:link].first[:href],
+            description: description[:summary][:_value]
+          }
+        end
       end
     end
   end
