@@ -9,8 +9,6 @@ class MedlineplusConnectApiClient
   # Acceptable API response types.
   RESPONSE_JSON = 'application/json'.freeze
   RESPONSE_XML  = 'text/xml'.freeze
-  # Cache prefixes.
-  CODE_CACHE_PREFIX = 'medplscnct-code-'.freeze
 
   # Base location from which to make API requests.
   API_URI = 'https://apps.nlm.nih.gov/medlineplus/services/mpconnect_service.cfm'.freeze
@@ -19,34 +17,24 @@ class MedlineplusConnectApiClient
     @system         = options[:system] || SYSTEM_ICD10
     @response_type  = options[:response_type] || RESPONSE_JSON
     @diagnosis_code = options[:diagnosis_code] || ''
-    @no_caching     = options[:no_caching] || false
   end
 
   def get_code_description
-    response = Rails.cache.fetch code_cache_key(@diagnosis_code), expires_in: 12.hours, force: @no_caching do
-      RestClient.get API_URI, {
-        params: {
-          'mainSearchCriteria.v.cs' => @system,
-          'mainSearchCriteria.v.c'  => @diagnosis_code,
-          'knowledgeResponseType'   => @response_type } }
-    end
-
     # MedlinePlus Connect is rate limited to 100 req/minute. Once this limit is
     #  reached, service will not be restored for 300 seconds, or whenever the 
     #  request rate falls below 100/min, whichever is longer.
-    if false # TODO: Check for failures and/or rate limitations, and throw an exception when one occurs.
-      Rails.cache.write(code_cache_key(diagnosis_code), response, expires_in: 300) unless @no_caching
+    response = RestClient.get API_URI, {
+      params: {
+        'mainSearchCriteria.v.cs' => @system,
+        'mainSearchCriteria.v.c'  => @diagnosis_code,
+        'knowledgeResponseType'   => @response_type }}
+
+    # TODO: Check for failures and/or rate limitations, and throw an exception
+    #  when one occurs.
+    if false
       raise MedlinePlusConnectApiError # TODO GET ERROR MESSAGES
     end
 
     response
   end
-
-  protected
-
-    # Generate a cache key for storing the result of looking up diagnosis
-    #  code description text.
-    def code_cache_key(diagnosis_code)
-      @code_cache_key ||= CODE_CACHE_PREFIX.to_s + diagnosis_code.to_s # TODO: Unsafe to memoize this?
-    end
 end
