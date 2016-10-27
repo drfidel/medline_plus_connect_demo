@@ -22,8 +22,8 @@ class DiagnosisCodeDescriptionService < Aldous::Service
   # Makes ICD-10 API call, and returns result payload in `result` Data Transfer
   #  Object.
   def perform
-    client          = MedlineplusConnectApiClient.new diagnosis_code: @diagnosis_code
-    client_response = client.get_code_description
+    client          = MedlineplusRuby::Client.new
+    client_response = client.description_data_for_code @diagnosis_code
 
     if client_response && client_response.try(:body).present?
       parsed_response = JSON.parse client_response, symbolize_names: true
