@@ -8,8 +8,6 @@ module MedlineplusRuby
     # Creates a Hash intended for use as a HTTP GET query, in which keys
     #  represent both API endpoints and request parameters for the NLM
     #  Medlineplus Connect API request.
-    # A request is made using the `diagnosis_code`, and the response body is
-    #  returned.
     def description_data_for_code(diagnosis_code, options = {})
       code_description_params = {
         'mainSearchCriteria.v.c'  => diagnosis_code,
@@ -17,7 +15,7 @@ module MedlineplusRuby
         'knowledgeResponseType'   => (options[:response_type] || MedlineplusRuby::API::ResponseType::RESPONSE_JSON)
       }
 
-      MedlineplusRuby::API::Request.new.get_request code_description_params
+      MedlineplusRuby::API::Request.build.get_request code_description_params
     end
 
   end
