@@ -1,5 +1,6 @@
 require 'medlineplus_ruby/error'
 require 'medlineplus_ruby/api/response_payload'
+require 'medlineplus_ruby/api/response_message'
 require 'rest-client'
 
 module MedlineplusRuby
@@ -30,7 +31,8 @@ module MedlineplusRuby
         # TODO: Check for failures and/or rate limitations, and return an
         #  appropriate response. Provide an error message, or extract something
         #  meaningful from the response if provided.
-        raise MedlineplusRuby::Error, 'MedlinePlus Connect API fail' if response.nil? || response.empty?
+        raise MedlineplusRuby::Error,
+          MedlineplusRuby::API::ResponseMessage::ERROR_NO_RESPONSE if response.nil? || response.empty?
 
         @response_payload.respond response.body, response.code
       end

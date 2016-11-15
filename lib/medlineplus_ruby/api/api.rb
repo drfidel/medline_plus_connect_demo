@@ -1,5 +1,5 @@
 require 'medlineplus_ruby/api/code_system'
-require 'medlineplus_ruby/api/response_type'
+require 'medlineplus_ruby/api/request_format'
 require 'medlineplus_ruby/api/request'
 
 module MedlineplusRuby
@@ -12,7 +12,7 @@ module MedlineplusRuby
       code_description_params = {
         'mainSearchCriteria.v.c'  => diagnosis_code,
         'mainSearchCriteria.v.cs' => (options[:code_system]   || MedlineplusRuby::API::CodeSystem::SYSTEM_ICD10),
-        'knowledgeResponseType'   => (options[:response_type] || MedlineplusRuby::API::ResponseType::RESPONSE_JSON)
+        'knowledgeResponseType'   => (options[:response_type] || MedlineplusRuby::API::RequestFormat::RESPONSE_JSON)
       }
 
       MedlineplusRuby::API::Request.build.get_request code_description_params

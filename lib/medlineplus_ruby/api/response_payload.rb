@@ -1,12 +1,13 @@
+require 'medlineplus_ruby/api/response_message'
+
 module MedlineplusRuby
   module API
     class ResponsePayload
 
-      RESPONSE_ERROR_NOPARSE = 'Unable to parse response from NLM API.'.freeze
-
       def initialize
       end
 
+      # Currently only supports 'application/json' responses.
       def respond(api_response_body, api_response_status)
         formatted_response = {
           success: false,
@@ -19,7 +20,7 @@ module MedlineplusRuby
         begin
           parsed_body = JSON.parse api_response_body, symbolize_names: true
         rescue JSON::ParserError => e
-          formatted_response[:errors] << RESPONSE_ERROR_NOPARSE
+          formatted_response[:errors] << MedlineplusRuby::API::ResponseMessage::ERROR_NO_PARSE
         end
 
         formatted_response.tap do |h|
