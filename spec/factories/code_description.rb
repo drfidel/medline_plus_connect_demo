@@ -6,9 +6,9 @@ FactoryGirl.define do
     trait :successful do
       after :build do |cd|
         allow(cd).to receive(:description_data) { [{
-          title: { _value: 'Sinusitis' },
-          link: [{ title: 'Sinusitis', href: 'https://medlineplus.gov/sinusitis.html' }],
-          summary: { _value: 'Sinusitis means your sinuses are inflamed.' }}] }
+          title:'Sinusitis',
+          link: 'https://medlineplus.gov/sinusitis.html',
+          description: 'Sinusitis means your sinuses are inflamed.' }] }
       end
     end
 
@@ -18,5 +18,5 @@ FactoryGirl.define do
       end
     end
 
-  end    
+  end
 end

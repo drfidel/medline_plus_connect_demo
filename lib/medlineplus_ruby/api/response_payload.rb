@@ -25,8 +25,8 @@ module MedlineplusRuby
 
         formatted_response.tap do |h|
           h[:success]        = true
-          h[:data_requested] = parsed_body[:feed][:subtitle][:_value]
-          
+          h[:data_requested] = parsed_body.dig :feed, :subtitle, :_value
+
           parsed_body[:feed][:entry].each do |entry|
             h[:data] << {
               title:       entry[:title][:_value],

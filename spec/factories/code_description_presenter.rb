@@ -7,5 +7,5 @@ FactoryGirl.define do
       initialize_with { new build(:code_description, :unsuccessful) }
     end
 
-  end    
+  end
 end

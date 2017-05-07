@@ -16,7 +16,7 @@ class DiagnosisCodeDescriptionService < Aldous::Service
   # Default value to return if no data is provided to the `Result` Data
   #  Transfer Object, or if an exception is raised during the `#perform` call.
   def default_result_data
-    { descriptions: [], message: MESSAGE_INVALID }
+    { descriptions: [], message: self.class::MESSAGE_INVALID }
   end
 
   # Makes ICD-10 API call, and returns result payload in `result` Data Transfer
@@ -25,16 +25,21 @@ class DiagnosisCodeDescriptionService < Aldous::Service
     client          = MedlineplusRuby::Client.new
     client_response = client.description_data_for_code @diagnosis_code
 
-    if client_response && client_response.try(:body).present?
-      parsed_response = JSON.parse client_response, symbolize_names: true
-
-      if parsed_response[:feed].present? && parsed_response[:feed][:entry].present?
-        Result::Success.new descriptions: parsed_response[:feed][:entry], message: MESSAGE_SUCCESS
+    # Return the descriptions associated with the given diagnosis code, or
+    #  return an empty response with the default 'invalid error code'
+    #  message.
+    # An invalid code is still a successful response from the API,  thus
+    #  `Aldous::Service::Result::Success` is the expected response, and not
+    #  a fail.
+    if client_response && client_response[:success].present?
+      if client_response[:data].present? && (client_response[:data].length > 0)
+        Result::Success.new descriptions: client_response[:data], message: self.class::MESSAGE_SUCCESS
       else
         Result::Success.new
       end
     else
-      Result::Failure.new errors: ERROR_NO_RESPONSE
+      Result::Failure.new errors: Aldous::Errors::UserError.new(self.class::ERROR_NO_RESPONSE)
     end
   end
+
 end

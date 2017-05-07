@@ -6,7 +6,7 @@ require 'rest-client'
 module MedlineplusRuby
   module API
     # MedlinePlus Connect is rate limited to 100 req/minute. Once this limit is
-    #  reached, service will not be restored for 300 seconds, or whenever the 
+    #  reached, service will not be restored for 300 seconds, or whenever the
     #  request rate falls below 100/min, whichever is longer.
     class Request
 
@@ -25,9 +25,9 @@ module MedlineplusRuby
       end
 
       def get_request(req_params = {})
-        
+
         response = RestClient.get API_URI, { params: req_params }
-        
+
         # TODO: Check for failures and/or rate limitations, and return an
         #  appropriate response. Provide an error message, or extract something
         #  meaningful from the response if provided.
@@ -36,7 +36,7 @@ module MedlineplusRuby
 
         @response_payload.respond response.body, response.code
       end
-      
+
     end
   end
 end

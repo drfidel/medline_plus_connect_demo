@@ -14,19 +14,8 @@ class CodeDescriptionPresenter
   #  title, and NLM-provided link. Returns array with a default hash with
   #  error message if no description entries found.
   def descriptions
-    @description_hash ||= [].tap do |ary|
-      if @code_description.description_data.blank?
-        ary << empty_data
-      else
-        @code_description.description_data.each do |description|
-          ary << {
-            title:       description[:title][:_value],
-            link:        description[:link].first[:href],
-            description: description[:summary][:_value]
-          }
-        end
-      end
-    end
+    return [] << empty_data if @code_description.description_data.blank?
+    @code_description.description_data
   end
 
   private

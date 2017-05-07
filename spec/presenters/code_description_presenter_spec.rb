@@ -15,7 +15,7 @@ describe CodeDescriptionPresenter do
     context 'with a successful CodeDescription object' do
       let(:code_description_presenter) { build(:code_description_presenter) }
 
-      it 'should return a hash with title, link, and description values' do 
+      it 'should return a hash with title, link, and description values' do
         expect(code_description_presenter.descriptions).to eq( [{
           title: 'Sinusitis',
           link: 'https://medlineplus.gov/sinusitis.html',
