@@ -3,8 +3,7 @@
 :gem: A Ruby API wrapper library, and Rails 5 demo application, for retrieving information from the National Library of
 Medicine's ["Medlineplus Connect" API](https://medlineplus.gov/connect/overview.html).  
 
-:computer: You can view a live demo of this application [here, on Heroku](https://toddsmedlinedemo.herokuapp.com/).  
-:city_sunrise: Free Heroku dynos take a few moments to wake from sleep.  
+:eyeglasses: You can view a live demo of this application [here, on Heroku](https://toddsmedlinedemo.herokuapp.com/). Free Heroku dynos take a few moments to wake from sleep.  
 
 :hospital: Currently there is one feature: fetching consumer facing information associated with
 [ICD-10](https://en.wikipedia.org/wiki/ICD-10) codes.
@@ -51,3 +50,10 @@ DBA chops can be revealed here, *{ in a TBD [Phoenix](http://www.phoenixframewor
 
 :wave: You can also check out [my other repositories](https://github.com/stratigos), and my ever so humble
 [website](http://techarchist.com/). Thanks!
+
+----
+
+License
+-------
+
+MIT, see [LICENSE](https://github.com/stratigos/medline_plus_connect_demo/blob/master/LICENSE) file.
