@@ -42,8 +42,7 @@ simple and light abstraction for Service objects and encourages a reliable and s
 It also encourages a consistent methodology for exception handling. I would not object to using PORO classes for an
 application Services layer either.
 
-:floppy_disk: **Persistence:** I write a lot of applications which interface with an RDBMS, and sometimes even dream in SQL. This
-application has no real need for a data layer, and as such does not demo my experience with MySQL and PostgreSQL. My
+:floppy_disk: **Persistence:** I write a lot of applications which interface with an RDBMS, and sometimes even dream in SQL. This application has no real need for a data layer, and as such does not demo my experience with MySQL and PostgreSQL. My
 DBA chops can be revealed here, *{ in a TBD [Phoenix](http://www.phoenixframework.org/) application }*.
 
 ----
