@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe DiagnosisCodeDescriptionService do
+RSpec.describe DiagnosisCodeDescriptionService do
 
   it_behaves_like 'a ServiceMessages service'
 

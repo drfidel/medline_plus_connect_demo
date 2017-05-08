@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Diagnosis Code Description Page' do
+RSpec.feature 'Diagnosis Code Description Page' do
 
   let!(:api_url)  { 'https://apps.nlm.nih.gov/medlineplus/services/mpconnect_service.cfm' }
   let!(:code)     { 'J01.01' }

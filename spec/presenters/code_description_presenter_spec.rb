@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe CodeDescriptionPresenter do
+RSpec.describe CodeDescriptionPresenter do
 
   describe '#code' do
     let(:code_description_presenter) { build(:code_description_presenter) }

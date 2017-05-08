@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe CodeDescription do
+RSpec.describe CodeDescription do
   it { is_a? ActiveModel::Model }
   it_behaves_like 'a DiagnosisCodeHelper model'
 

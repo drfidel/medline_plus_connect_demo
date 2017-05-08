@@ -1,4 +1,4 @@
-shared_examples_for 'a ServiceMessages service' do
+RSpec.shared_examples_for 'a ServiceMessages service' do
 
   it { expect( described_class.const_defined?(:MESSAGE_SUCCESS) ).to eq(true) }
   it { expect( described_class::MESSAGE_SUCCESS.frozen? ).to eq(true) }

@@ -1,4 +1,4 @@
-shared_examples_for 'a DiagnosisCodeHelper model' do
+RSpec.shared_examples_for 'a DiagnosisCodeHelper model' do
 
   let(:diagnosis_code_helper_example) { described_class.new }
   let(:description_data)              { { hash: 'browns' } }
