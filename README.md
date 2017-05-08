@@ -3,7 +3,7 @@
 :gem: A Ruby API wrapper library, and Rails 5 demo application, for retrieving information from the National Library of
 Medicine's ["Medlineplus Connect" API](https://medlineplus.gov/connect/overview.html).  
 
-:eyeglasses: You can view a live demo of this application [here, on Heroku](https://toddsmedlinedemo.herokuapp.com/). Free Heroku dynos take a few moments to wake from sleep.  
+:eyeglasses: You can view a live demo of this application [on Heroku](https://toddsmedlinedemo.herokuapp.com/). Free Heroku dynos take a few moments to wake from sleep.  
 
 :hospital: Currently there is one feature: fetching consumer facing information associated with
 [ICD-10](https://en.wikipedia.org/wiki/ICD-10) codes.
