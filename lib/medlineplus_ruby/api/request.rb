@@ -30,7 +30,9 @@ module MedlineplusRuby
 
         # TODO: Check for failures and/or rate limitations, and return an
         #  appropriate response. Provide an error message, or extract something
-        #  meaningful from the response if provided.
+        #  meaningful from the response if provided. Note: it appears as though
+        #  the National Library of Medicine has no such rate limitation at this
+        #  time.
         raise MedlineplusRuby::Error,
           MedlineplusRuby::API::ResponseMessage::ERROR_NO_RESPONSE if response.nil? || response.empty?
 
