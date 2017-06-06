@@ -14,7 +14,7 @@ Specs
 -----
 
 * **Ruby** >= 2.4.1
-* **Rails** >= 5.1.0
+* **Rails** >= 5.1.1
 * **RSpec** >= 3.6
 * Hosted on Heroku's free tier.
 
