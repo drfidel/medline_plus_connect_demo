@@ -23,10 +23,7 @@ and **Bootstrap** are used together to simplify front end concerns. As the lates
 *alpha-4*, its unlikely this application will update to follow subsequent releases of Bootstrap 4. You can check out  
 some of my front end work here.
 
-:gem: **Rubygem:** I am extracting the contents of [lib/](https://github.com/stratigos/medline_plus_connect_demo/tree/master/lib)
-to a rubygem once development is finished within the scope of this test application. Currently it represents an API
-client that simplifies making requests to the NLM API. The NLM API is far removed from modern web standards, and this
-gem allows for a more seamless integration with Ruby medical applications.  
+:gem: **Rubygem:** I have extracted the contents of `lib/` to a rubygem: [medlineplus_ruby](https://github.com/stratigos/medlineplus_ruby). Currently it represents an API client that simplifies making requests to the NLM API. The NLM API is far removed from modern web standards, and this gem allows for a more seamless integration with Ruby medical applications. It is available on [rubygems.org](https://rubygems.org/gems/medlineplus_ruby).
 
 :traffic_light: **Tests:** BDD is practiced when it is feasible, and I aim to have 100% spec coverage.
 * Run `./bin/rails spec` for the whole suite.
